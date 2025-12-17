@@ -12,12 +12,15 @@ function renderFavorites() {
 
     const items = ids.map(id => allFruits.find(f => f.id === Number(id))).filter(Boolean);
 
+    // apply the same sort logic (by calories) if available
+    const sortedItems = (typeof sortFruits === 'function') ? sortFruits(items) : items;
+
     if (items.length === 0) {
         favContainer.innerHTML = '<p class="small">No favorites yet.</p>';
         return;
     }
 
-    favContainer.innerHTML = items.map(item => {
+    favContainer.innerHTML = sortedItems.map(item => {
         const emoji = fruitEmojis[item.name] || '🍏';
         const fav = isFavorite(item.id) ? '♥︎' : '♡';
         return `
@@ -39,6 +42,7 @@ function renderFavorites() {
 // Re-render when fruits load or favorites change
 window.addEventListener('fruitsLoaded', renderFavorites);
 window.addEventListener('favoritesChanged', renderFavorites);
+window.addEventListener('sortChanged', renderFavorites);
 
 // Try rendering on load in case data already fetched
 window.addEventListener('DOMContentLoaded', () => {

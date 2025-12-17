@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 100px;
 
+    cursor: url('images/cursor.png') 8 8, auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +16,11 @@ body {
     color: #9b3192;
     font-size: 16px;
 }
+
+a, button, select, input, textarea {
+    cursor: url('images/pointer.png') 8 8, pointer;
+}
+
 
 /*võtab fontidest mu fondi*/
 @font-face {
@@ -126,7 +133,40 @@ font-family: "Times New Roman", Times, serif;
 #sortSelect {
     display: inline-block;
     margin-bottom: 20px;
+    cursor: url('images/pointer.png') 8 8, pointer;
 }
+
+/* Custom select replacement styles */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    /* normalize font size so it doesn't inherit large heading sizes */
+    font-size: 16px;
+}
+.custom-select__button {
+    cursor: url('images/pointer.png') 8 8, pointer;
+    background: white;
+    border: 1px solid #f6c5f2;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+.custom-select__list {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    background: white;
+    border: 1px solid #f6c5f2;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    z-index: 60;
+    min-width: 160px;
+}
+.custom-select__option {
+    padding: 8px 10px;
+    cursor: url('images/pointer.png') 8 8, pointer;
+    font-size: 16px;
+}
+.custom-select__option:hover { background: #faf0fb; }
+.custom-select__option.selected { font-weight: 600; }
 
 /* Keep cards from shrinking and ensure consistent widths across pages */
 .card {

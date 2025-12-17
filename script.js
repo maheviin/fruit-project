@@ -179,7 +179,77 @@ window.addEventListener('DOMContentLoaded', () => {
     if (typeof fetchAllFruits === 'function') {
         fetchAllFruits();
     }
+    // enhance the sort select into a custom dropdown so the open list shows our custom cursor
+    try {
+        enhanceSortSelect();
+    } catch (e) {
+        // enhancement is optional; ignore if function missing or fails
+        console.warn('enhanceSortSelect failed', e);
+    }
 });
+
+// Replace the native #sortSelect with a small custom dropdown while keeping the native select hidden.
+function enhanceSortSelect() {
+    const sel = document.getElementById('sortSelect');
+    if (!sel) return;
+
+    // avoid double-enhancing
+    if (sel.dataset.enhanced === '1') return;
+
+    sel.dataset.enhanced = '1';
+    // hide native select but keep it for form/backwards compatibility
+    sel.style.display = 'none';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'custom-select';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'custom-select__button';
+    btn.textContent = sel.options[sel.selectedIndex]?.text || 'Select';
+
+    const list = document.createElement('div');
+    list.className = 'custom-select__list';
+    list.style.display = 'none';
+
+    Array.from(sel.options).forEach(opt => {
+        // keep a placeholder/default option for the button preview but don't show it in the dropdown list
+        if (opt.value === 'default' || opt.disabled) return;
+
+        const optEl = document.createElement('div');
+        optEl.className = 'custom-select__option';
+        optEl.dataset.value = opt.value;
+        optEl.textContent = opt.text;
+        if (opt.selected) optEl.classList.add('selected');
+        optEl.addEventListener('click', (e) => {
+            sel.value = optEl.dataset.value;
+            // update button label
+            btn.textContent = optEl.textContent;
+            // reflect selection visually
+            list.querySelectorAll('.custom-select__option').forEach(o => o.classList.remove('selected'));
+            optEl.classList.add('selected');
+            // close list
+            list.style.display = 'none';
+            // trigger native change so existing listeners react
+            sel.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+        list.appendChild(optEl);
+    });
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        list.style.display = (list.style.display === 'none') ? 'block' : 'none';
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) list.style.display = 'none';
+    });
+
+    wrapper.appendChild(btn);
+    wrapper.appendChild(list);
+    sel.parentNode.insertBefore(wrapper, sel.nextSibling);
+}
 
 
 

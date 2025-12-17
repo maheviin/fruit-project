@@ -21,7 +21,12 @@
         </nav>
 
     <main>
-        <h3>Your favorite fruit!</h3>
+        <h3>Your favorite fruit! <select id="sortSelect">
+            <option value="default">Sort by calories (´｡•᎑•`)っ</option>
+            <option value="asc">Lowest → Highest</option>
+            <option value="desc">Highest → Lowest</option>
+        </select>
+    </h3>
         <div id="favoritesList"></div>
     </main>
 
@@ -29,6 +34,7 @@
 
 <script src="script.js"></script>
 <script src="favorites.js"></script>
+<script src="calories.js"></script>
 </body>
 
 </html>

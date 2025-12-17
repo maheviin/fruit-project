@@ -21,5 +21,7 @@ function sortFruits(items) { //sorts fruit list by calories
 if (sortSelect) {
     sortSelect.addEventListener("change", () => { //resort and rerender when dropdown changes
         renderResults(sortFruits(allFruits));
+        // notify other modules (favorites) that sort order changed
+        window.dispatchEvent(new CustomEvent('sortChanged'));
     });
 }
