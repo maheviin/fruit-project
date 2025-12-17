@@ -52,7 +52,8 @@ body {
     gap: 16px;
     border: groove 8px #f6c5f2;
     background-color: #ffffe9;
-    padding: 0px 40px;
+    padding: 0px 40px 40px 40px;
+    max-width: 1000px;
 }
 
 nav {
@@ -93,6 +94,37 @@ font-family: "Times New Roman", Times, serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+}
+
+/* Ensure the results container (id="results") displays cards in pairs */
+#results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make single-column on narrow viewports */
+@media (max-width: 600px) {
+    #results {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+#favoritesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    #favoritesList {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card .row {
