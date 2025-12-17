@@ -15,31 +15,30 @@ body {
 }
 
 @font-face {
-    font-family: 'Oranju'; /* The name you'll use in CSS */
-    src: url('fonts/Oranju.otf') format('truetype');
-    font-weight: 400;
+    font-family: 'Haloberry';
+    /* The name you'll use in CSS */
+    src: url('fonts/Haloberry.otf') format('truetype');
+    font-weight: auto;
     font-style: normal;
 }
 
 .image-text {
-    font-family: 'Oranju', sans-serif; /* your custom font */
-    font-size: 80px; /* adjust as needed */
+    font-family: 'Haloberry', sans-serif;
+    font-size: 60px;
     font-weight: bold;
-        padding: 0px;
-    margin: 0;
-    
-    /* background image applied to text */
-   /* background-image: url('https://dl.glitter-graphics.com/pub/3558/3558134bakqvcxlo6.gif'); */
-    /* background-size: cover; 
+
+    background-image: url('https://dl.glitter-graphics.com/pub/3682/3682034mxl55jw25d.gif');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; */
+    color: transparent;
 }
+
+
 
 .layout {
     display: grid;
@@ -52,15 +51,15 @@ body {
     gap: 16px;
     border: groove 8px #f6c5f2;
     background-color: #ffffe9;
-    padding: 16px;
+    padding: 0px 40px;
 }
 
 h1 {
     grid-area: title;
-    padding: 20px 40px;
     text-align: center;
-    font-family: 'Oranju', sans-serif;
-    font-size: 80px;
+    font-family: 'Haloberry', sans-serif;
+    font-size: 60px;
+    -webkit-text-stroke: 0.5px rgb(216, 99, 201);
 }
 
 nav {
@@ -73,12 +72,16 @@ main {
 
 .card .row {
     display: flex;
-    flex-direction: column; /* stack each nutrient vertically */
-    gap: 4px;               /* space between nutrients */
-    margin-top: 8px;        /* space below the fruit name */
+    flex-direction: column;
+    /* stack each nutrient vertically */
+    gap: 4px;
+    /* space between nutrients */
+    margin-top: 8px;
+    /* space below the fruit name */
 }
 
 .card .row .small {
     font-size: 0.9rem;
-    color: #c758be;          /* lighter color for nutrition info */
+    color: #c758be;
+    /* lighter color for nutrition info */
 }
