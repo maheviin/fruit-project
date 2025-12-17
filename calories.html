@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Nutrition Explorer</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="layout">
+    <h1>Fruit Nutrition Explorer</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Fruit Explorer</a></li>
+            <li><a href="calories.html">Sort by calories</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h3>Sort Fruits by Calories</h3>
+
+        <!-- Sorting dropdown -->
+        <select id="sortSelect">
+            <option value="default">Sort by calories</option>
+            <option value="asc">Lowest → Highest</option>
+            <option value="desc">Highest → Lowest</option>
+        </select>
+
+        <!-- Container for dynamic fruit cards -->
+        <div id="results"></div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+<script src="calories.js"></script>
+</body>
+</html>

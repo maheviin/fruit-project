@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Nutrition Explorer</title>
+    <link href="styles.css" rel="stylesheet">
+
+<body>
+    <div class="layout">
+        <h1>Fruit Nutrition Explorer</h1>
+        <nav>
+            <h3>Stuff to do:</h3>
+            <ul>
+                <li><a href="index.html">Fruit Explorer</a></li>
+                <li><a href="calories.html">Sort by calories</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <h3>Search by name <form id="searchForm" class="search">
+                    <input id="searchInput" type="text" placeholder="Type fruit name" autocomplete="off" />
+                    <button type="submit">Search</button>
+                 </form>
+            </h3>
+            <div id="results"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
