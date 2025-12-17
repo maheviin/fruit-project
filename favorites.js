@@ -19,7 +19,7 @@ function renderFavorites() {
 
     favContainer.innerHTML = items.map(item => {
         const emoji = fruitEmojis[item.name] || '🍏';
-        const fav = isFavorite(item.id) ? '♥' : '♡';
+        const fav = isFavorite(item.id) ? '♥︎' : '♡';
         return `
         <div class="card" data-id="${item.id}">
             <h3>${emoji} ${item.name} <button class="heart-btn" data-heart-id="${item.id}" aria-pressed="${isFavorite(item.id)}">${fav}</button></h3>

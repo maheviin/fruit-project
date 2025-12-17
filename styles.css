@@ -1,19 +1,44 @@
 body {
     margin: 0;
-    min-height: 100vh;
+    padding: 100px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #2c2c2b;
+    background-image: url('https://www.picgifs.com/glitter-gifs/f/fruit/picgifs-fruit-678700.gif');
+    background-size: auto;
+    background-repeat: repeat;
+    background-color: #ffffe9;
+
+    color: #9b3192;
 }
 
+@font-face {
+    font-family: 'Oranju'; /* The name you'll use in CSS */
+    src: url('fonts/Oranju.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
-
-
-a {
-    color: #eee6ea;
+.image-text {
+    font-family: 'Oranju', sans-serif; /* your custom font */
+    font-size: 80px; /* adjust as needed */
+    font-weight: bold;
+        padding: 0px;
+    margin: 0;
+    
+    /* background image applied to text */
+   /* background-image: url('https://dl.glitter-graphics.com/pub/3558/3558134bakqvcxlo6.gif'); */
+    /* background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+    background-clip: text;
+    color: transparent; */
 }
 
 .layout {
@@ -25,15 +50,17 @@ a {
         "nav   main";
 
     gap: 16px;
-    border: solid 4px #fff;
-    background-color: #232122;
-    color: #eee6ea;
+    border: groove 8px #f6c5f2;
+    background-color: #ffffe9;
     padding: 16px;
 }
 
-header h1 {
+h1 {
     grid-area: title;
+    padding: 20px 40px;
     text-align: center;
+    font-family: 'Oranju', sans-serif;
+    font-size: 80px;
 }
 
 nav {
@@ -53,5 +80,5 @@ main {
 
 .card .row .small {
     font-size: 0.9rem;
-    color: #ccc;           /* lighter color for nutrition info */
+    color: #c758be;          /* lighter color for nutrition info */
 }
