@@ -12,8 +12,10 @@ body {
     background-color: #ffffe9;
 
     color: #9b3192;
+    font-size: 16px;
 }
 
+/*võtab fontidest mu fondi*/
 @font-face {
     font-family: 'Haloberry';
     /* The name you'll use in CSS */
@@ -22,6 +24,7 @@ body {
     font-style: normal;
 }
 
+/* paneb fondi sisse gifi*/
 .image-text {
     font-family: 'Haloberry', sans-serif;
     font-size: 60px;
@@ -38,8 +41,6 @@ body {
     color: transparent;
 }
 
-
-
 .layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -54,6 +55,15 @@ body {
     padding: 0px 40px;
 }
 
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    gap: 20px;
+}
+
 h1 {
     grid-area: title;
     text-align: center;
@@ -62,12 +72,27 @@ h1 {
     -webkit-text-stroke: 0.5px rgb(216, 99, 201);
 }
 
-nav {
-    grid-area: nav;
+h3 {
+    text-align: left;
+font-family: "Times New Roman", Times, serif;
+    font-size: 24px;
 }
 
-main {
-    grid-area: main;
+.card {
+    border: 16px groove #f6c5f2;
+    background-color: white;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .card .row {
@@ -81,7 +106,6 @@ main {
 }
 
 .card .row .small {
-    font-size: 0.9rem;
     color: #c758be;
     /* lighter color for nutrition info */
 }
