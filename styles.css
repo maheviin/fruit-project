@@ -112,7 +112,7 @@ font-family: "Times New Roman", Times, serif;
     gap: 16px;
 }
 
-/* Ensure the results container (id="results") displays cards in pairs */
+/* Ensure the results container (id="results") displays cards in pairszz */
 #results {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
