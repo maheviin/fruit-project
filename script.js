@@ -1,7 +1,7 @@
 const fruitEmojis = {
     "Pumpkin": "🎃",
     "Cherry": "🍒",
-    "Pomegranate": "🔴",
+    "Pomegranate": "❤️",
     "Jackfruit": "🍈",
     "Dragonfruit": "🐲",
     "Kiwifruit": "🥝ྀིྀི",
@@ -45,7 +45,6 @@ const fruitEmojis = {
     "Tangerine": "🍊",
     "Pitahaya": "🐉",
     "Lime": "🍋‍🟩",
-    "Pomegranate": "🧧",
     "Persimmon": "🟠",
     "Tomato": "🍅"
 };
@@ -63,7 +62,7 @@ function renderResults(items) {
     resultsEl.innerHTML = "";
 
     if (!items || items.length === 0) {
-        resultsEl.innerHTML = `<p class="small">No fruits found.</p>`;
+        resultsEl.innerHTML = `<p class="small">This fruit doesn't exist!!! (｡•̀ ⤙ •́ ｡ꐦ)</p>`;
         return;
     }
 

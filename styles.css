@@ -112,6 +112,12 @@ font-family: "Times New Roman", Times, serif;
     }
 }
 
+/* Add spacing between the calories sort select and results list */
+#sortSelect {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 
 #favoritesList {
     display: grid;
@@ -140,4 +146,17 @@ font-family: "Times New Roman", Times, serif;
 .card .row .small {
     color: #c758be;
     /* lighter color for nutrition info */
+}
+
+nav ul li a {
+    text-decoration: none;        /* remove default underline */
+    color: #9b3192;               /* base color */
+    font-weight: normal;           /* base weight */
+    transition: all 0.2s ease;    /* smooth hover effect */
+}
+
+nav ul li a:hover {
+    font-weight: bold;             /* make bold */
+    text-decoration: underline;    /* add underline */
+    color: #c758be;                /* optional: change color */
 }
