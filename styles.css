@@ -8,13 +8,13 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-image: url('https://www.picgifs.com/glitter-gifs/f/fruit/picgifs-fruit-678700.gif');
+    background-image: url('images/strawberry.gif');
     background-size: auto;
     background-repeat: repeat;
     background-color: #ffffe9;
 
     color: #9b3192;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 a, button, select, input, textarea {
@@ -37,7 +37,7 @@ a, button, select, input, textarea {
     font-size: 60px;
     font-weight: bold;
 
-    background-image: url('https://dl.glitter-graphics.com/pub/3682/3682034mxl55jw25d.gif');
+    background-image: url('images/sparkle.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -133,6 +133,7 @@ font-family: "Times New Roman", Times, serif;
     display: inline-block;
     margin-bottom: 20px;
     cursor: url('images/pointer.png') 8 8, pointer;
+    font-size: 18px;
 }
 
 /* Custom select replacement styles */
@@ -140,7 +141,7 @@ font-family: "Times New Roman", Times, serif;
     position: relative;
     display: inline-block;
     /* normalize font size so it doesn't inherit large heading sizes */
-    font-size: 16px;
+    font-size: 18px;
 }
 .custom-select__button {
     cursor: url('images/pointer.png') 8 8, pointer;
@@ -162,7 +163,7 @@ font-family: "Times New Roman", Times, serif;
 .custom-select__option {
     padding: 8px 10px;
     cursor: url('images/pointer.png') 8 8, pointer;
-    font-size: 16px;
+    font-size: 18px;
 }
 .custom-select__option:hover { background: #faf0fb; }
 .custom-select__option.selected { font-weight: 600; }
