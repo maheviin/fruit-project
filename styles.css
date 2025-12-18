@@ -112,14 +112,13 @@ font-family: "Times New Roman", Times, serif;
     gap: 16px;
 }
 
-/* Ensure the results container (id="results") displays cards in pairszz */
+/* Ensure the results container (id="results") displays cards in pairs and is flexible */
 #results {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 16px;
     width: 100%;
     box-sizing: border-box;
-    justify-items: center;
 }
 
 /* Make single-column on narrow viewports */
@@ -171,22 +170,18 @@ font-family: "Times New Roman", Times, serif;
 /* Keep cards from shrinking and ensure consistent widths across pages */
 .card {
     box-sizing: border-box;
-    width: 320px;       /* preferred card width when space allows */
-    max-width: 100%;    /* shrink to fit smaller viewports / grid cells */
+    width: 100%;        /* fill available grid cell */
     min-width: 0;       /* allow grid to properly shrink without forcing content overflow */
 }
 
 /* Apply same layout rules for favorites list container */
+/* Favorites list should match results and be flexible */
 #favoritesList {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 16px;
     width: 100%;
     box-sizing: border-box;
-}
-
-#favoritesList {
-    justify-items: center;
 }
 
 /* Ensure results and favorites use the same max width and are centered */

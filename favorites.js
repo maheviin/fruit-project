@@ -22,9 +22,10 @@ function renderFavorites() {
 
     favContainer.innerHTML = sortedItems.map(item => {
         const emoji = fruitEmojis[item.name] || '🍏';
-        const fav = isFavorite(item.id) ? '♥︎' : '♡';
+        const fav = isFavorite(item.id) ? '♥' : '♡';
+        const ariaLabel = `${item.name}, ${item.nutritions.calories} calories, ${item.nutritions.carbohydrates}g carbohydrates, ${item.nutritions.fat}g fat, ${item.nutritions.protein}g protein, ${item.nutritions.sugar}g sugar`;
         return `
-        <div class="card" data-id="${item.id}">
+        <div class="card" data-id="${item.id}" role="article" tabindex="0" aria-label="${ariaLabel}">
             <h3>${emoji} ${item.name} <button class="heart-btn" data-heart-id="${item.id}" aria-pressed="${isFavorite(item.id)}">${fav}</button></h3>
             <div class="row">
                 <div class="small">calories: ${item.nutritions.calories}</div>
