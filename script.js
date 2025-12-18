@@ -70,10 +70,10 @@ function renderResults(items) {
         const emoji = fruitEmojis[item.name] || "🍏";
         const fav = isFavorite(item.id) ? '♥' : '♡';
 
-            // make card focusable and provide an accessible label for screen readers
-            const ariaLabel = `${item.name}, ${item.nutritions.calories} calories, ${item.nutritions.carbohydrates}g carbohydrates, ${item.nutritions.fat}g fat, ${item.nutritions.protein}g protein, ${item.nutritions.sugar}g sugar`;
+        // make card focusable and provide an accessible label for screen readers
+        const ariaLabel = `${item.name}, ${item.nutritions.calories} calories, ${item.nutritions.carbohydrates}g carbohydrates, ${item.nutritions.fat}g fat, ${item.nutritions.protein}g protein, ${item.nutritions.sugar}g sugar`;
 
-            resultsEl.innerHTML += `
+        resultsEl.innerHTML += `
             <div class="card" data-id="${item.id}" role="article" tabindex="0" aria-label="${ariaLabel}">
                 <h3>${emoji} ${item.name} <button class="heart-btn" data-heart-id="${item.id}" aria-pressed="${isFavorite(item.id)}">${fav}</button></h3>
                 <div class="row">
@@ -209,17 +209,17 @@ function enhanceSortSelect() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'custom-select__button';
-        btn.textContent = sel.options[sel.selectedIndex]?.text || 'Select';
-        btn.setAttribute('aria-haspopup', 'listbox');
-        btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = sel.options[sel.selectedIndex]?.text || 'Select';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
 
     const list = document.createElement('div');
     list.className = 'custom-select__list';
     list.style.display = 'none';
-        list.setAttribute('role', 'listbox');
-        const listId = `custom-select-list-${Math.random().toString(36).slice(2,8)}`;
-        list.id = listId;
-        btn.setAttribute('aria-controls', listId);
+    list.setAttribute('role', 'listbox');
+    const listId = `custom-select-list-${Math.random().toString(36).slice(2, 8)}`;
+    list.id = listId;
+    btn.setAttribute('aria-controls', listId);
 
     Array.from(sel.options).forEach(opt => {
         // keep a placeholder/default option for the button preview but don't show it in the dropdown list
@@ -238,9 +238,9 @@ function enhanceSortSelect() {
             // update button label
             btn.textContent = optEl.textContent;
             // reflect selection visually
-            list.querySelectorAll('.custom-select__option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-selected','false'); });
+            list.querySelectorAll('.custom-select__option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-selected', 'false'); });
             optEl.classList.add('selected');
-            optEl.setAttribute('aria-selected','true');
+            optEl.setAttribute('aria-selected', 'true');
             // close list
             list.style.display = 'none';
             btn.setAttribute('aria-expanded', 'false');
@@ -266,35 +266,35 @@ function enhanceSortSelect() {
         }
     });
 
-        // keyboard support for options
-        list.addEventListener('keydown', (e) => {
-            const focused = document.activeElement;
-            if (!focused || !focused.classList.contains('custom-select__option')) return;
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                const next = focused.nextElementSibling || list.querySelector('.custom-select__option');
-                if (next) next.focus();
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                const prev = focused.previousElementSibling || list.querySelector('.custom-select__option:last-child');
-                if (prev) prev.focus();
-            } else if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                focused.click();
-            } else if (e.key === 'Escape') {
-                list.style.display = 'none';
-                btn.setAttribute('aria-expanded','false');
-                btn.focus();
-            }
-        });
+    // keyboard support for options
+    list.addEventListener('keydown', (e) => {
+        const focused = document.activeElement;
+        if (!focused || !focused.classList.contains('custom-select__option')) return;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = focused.nextElementSibling || list.querySelector('.custom-select__option');
+            if (next) next.focus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = focused.previousElementSibling || list.querySelector('.custom-select__option:last-child');
+            if (prev) prev.focus();
+        } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            focused.click();
+        } else if (e.key === 'Escape') {
+            list.style.display = 'none';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.focus();
+        }
+    });
 
-        // allow opening list with keyboard from button
-        btn.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowDown' || e.key === ' ') {
-                e.preventDefault();
-                btn.click();
-            }
-        });
+    // allow opening list with keyboard from button
+    btn.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+        }
+    });
 
     // close when clicking outside
     document.addEventListener('click', (e) => {

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruit Nutrition Explorer</title>
     <link href="styles.css" rel="stylesheet">
+
+    <link rel="icon" type="image/gif" sizes="16x16" href="images/straw16.gif">
+    <link rel="icon" type="image/gif" sizes="32x32" href="images/straw32.gif">
 </head>
 
 <body>
-<div class="layout">
-    <h1 class="image-text">Fruit Nutrition Explorer</h1>
+    <div class="layout">
+        <h1 class="image-text">Fruit Nutrition Explorer</h1>
         <nav>
             <h3>Stuff to do:</h3>
             <ul>
@@ -20,20 +23,21 @@
             </ul>
         </nav>
 
-    <main>
-        <h3>Sort All Fruits by Calories <select id="sortSelect">
-            <option value="default">Sort fruit (´｡•᎑•`)っ ↓</option>
-            <option value="asc">Lowest → Highest</option>
-            <option value="desc">Highest → Lowest</option>
-        </select>
-        </h3>
+        <main>
+            <h3>Sort All Fruits by Calories <select id="sortSelect">
+                    <option value="default">Sort fruit (´｡•᎑•`)っ ↓</option>
+                    <option value="asc">Lowest → Highest</option>
+                    <option value="desc">Highest → Lowest</option>
+                </select>
+            </h3>
 
-        <!-- Container for dynamic fruit cards -->
-        <div id="results"></div>
-    </main>
-</div>
+            <!-- Container for dynamic fruit cards -->
+            <div id="results"></div>
+        </main>
+    </div>
 
-<script src="script.js"></script>
-<script src="calories.js"></script>
+    <script src="script.js"></script>
+    <script src="calories.js"></script>
 </body>
+
 </html>
